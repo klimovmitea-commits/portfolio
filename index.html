@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сайты за небольшую стоимость — портфолио начинающего разработчика</title>
+  <meta name="description" content="Начинающий разработчик сайтов. Делаю аккуратные сайты-визитки и небольшие сайты за небольшую стоимость.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <noscript><style>.welcome { display: none; }</style></noscript>
+</head>
+<body class="locked">
+
+  <!-- Всплывающее приветствие -->
+  <div class="welcome" id="welcome" role="dialog" aria-label="Приветствие">
+    <p>Добро пожаловать</p>
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="#home">Портфолио</a>
+      <nav aria-label="Главное меню">
+        <ul>
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#works">Работы</a></li>
+          <li><a href="prices.html">Цены</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Главная -->
+    <div class="hero" id="home">
+      <div class="wrap">
+        <h1>Здравствуйте!Меня зовут Климов Дмитрий, я начинающий разработчик сайтов.
+        <p class="lead">
+          Я начинающий разработчик сайтов и беру за работу небольшую стоимость.
+          Каждый заказ делаю внимательно и аккуратно: простой, спокойный дизайн,
+          понятный текст и сайт, который удобно открывать с телефона.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#contacts">Связаться со мной</a>
+          <a class="btn ghost" href="prices.html">Посмотреть цены</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Услуги -->
+    <section class="alt" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Чем я могу помочь</h2>
+          <p>Я работаю с обычными сайтами без сложных систем: этого достаточно, чтобы рассказать о вас или вашем деле в интернете.</p>
+        </div>
+        <ul class="rows">
+          <li>
+            <h3>Сайт-визитка</h3>
+            <p>Одна страница, на которой есть всё главное: кто вы, чем занимаетесь, чем можете быть полезны и как с вами связаться.</p>
+          </li>
+          <li>
+            <h3>Небольшой сайт из нескольких страниц</h3>
+            <p>Главная, страница услуг или каталога, контакты и другие нужные разделы. Страницы выглядят в одном стиле и связаны между собой.</p>
+          </li>
+          <li>
+            <h3>Адаптация под телефон</h3>
+            <p>Сайт одинаково удобно читать на компьютере, планшете и смартфоне. Это входит в каждый заказ.</p>
+          </li>
+          <li>
+            <h3>Публикация в интернете</h3>
+            <p>Помогу выложить готовый сайт, чтобы его можно было открыть по ссылке, и объясню, как всё устроено.</p>
+          </li>
+          <li>
+            <h3>Правки готового сайта</h3>
+            <p>Поменять текст, цвета, добавить фото или раздел на сайте, который уже есть.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Работы -->
+    <section id="works">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Мои работы</h2>
+          <p>Этот сайт тоже моя работа. Он сделан с нуля: цвета, текст и расположение блоков выбраны специально, чтобы всё выглядело спокойно.</p>
+        </div>
+        <div class="work">
+          <div class="work-preview" aria-hidden="true">ХИМ-КЛИМ</div>
+          <div>
+            <h3>Сайт химчистки «ХИМ-КЛИМ»</h3>
+            <p>Учебный проект из двух страниц: главная и страница услуг с карточками. Опубликован в интернете. Данные на сайте вымышленные, это пример моей работы.</p>
+            <!-- Вставьте сюда ссылку на ваш сайт на GitHub Pages вместо # -->
+            <a class="btn ghost" href="https://klimovmitea-commits.github.io/him-klim-site/" target="_blank" rel="noopener">Открыть сайт</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Как я работаю -->
+    <section class="alt" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Как проходит работа</h2>
+        </div>
+        <ol class="steps">
+          <li><div><strong>Вы пишете мне</strong><span>Рассказываете, какой сайт нужен, и присылаете тексты или фото, если они есть.</span></div></li>
+          <li><div><strong>Мы договариваемся о цене и сроках</strong><span>Всё заранее и честно, без скрытых платежей.</span></div></li>
+          <li><div><strong>Я делаю первую версию</strong><span>Вы смотрите её и говорите, что поменять.</span></div></li>
+          <li><div><strong>Правки и публикация</strong><span>Исправляю замечания, после чего сайт выкладывается в интернет.</span></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts" id="contacts">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Контакты</h2>
+          <p>Напишите мне в удобный мессенджер: расскажите, какой сайт вам нужен, и я отвечу с примерной ценой.</p>
+        </div>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="label">WhatsApp / Viber</span>
+            <a href="tel:+37367671957">+373 676 71 957</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">Telegram</span>
+            <a href="https://t.me/etudianet" target="_blank" rel="noopener">@etudianet</a>
+          </div>
+        </div>
+        <div class="msg-links">
+          <a class="btn" href="https://wa.me/37367671957" target="_blank" rel="noopener">Написать в WhatsApp</a>
+          <a class="btn" href="viber://chat?number=%2B37367671957">Написать в Viber</a>
+          <a class="btn" href="https://t.me/etudianet" target="_blank" rel="noopener">Написать в Telegram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Портфолио начинающего разработчика сайтов</div>
+  </footer>
+
+  <script>
+    (function () {
+      var welcome = document.getElementById('welcome');
+      var seen = false;
+
+      // Если человек уже видел приветствие в этой вкладке (например, вернулся со страницы цен), не показываем снова
+      try { seen = sessionStorage.getItem('welcomeSeen') === '1'; } catch (e) {}
+
+      function hide() {
+        welcome.classList.add('gone');
+        document.body.classList.remove('locked');
+        try { sessionStorage.setItem('welcomeSeen', '1'); } catch (e) {}
+        setTimeout(function () { welcome.style.display = 'none'; }, 1000);
+      }
+
+      if (seen) {
+        welcome.style.display = 'none';
+        document.body.classList.remove('locked');
+      } else {
+        setTimeout(hide, 2300);
+        welcome.addEventListener('click', hide);
+      }
+    })();
+  </script>
+</body>
+</html>

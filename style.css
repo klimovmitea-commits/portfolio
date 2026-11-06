@@ -1,0 +1,362 @@
+/* ===== Цвета и шрифты ===== */
+:root {
+  --milk: #faf6ef;
+  --foam: #f1e9dd;
+  --latte: #d8c3a8;
+  --mocha: #8a6347;
+  --espresso: #3a2a21;
+  --muted: #6e5a4c;
+
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+
+body {
+  margin: 0;
+  background: var(--milk);
+  color: var(--espresso);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+body.locked { overflow: hidden; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--mocha);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: min(1040px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ===== Меню ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(250, 246, 239, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--latte);
+}
+
+.nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav ul a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav ul a:hover,
+.nav ul a[aria-current="page"] {
+  color: var(--espresso);
+  border-color: var(--mocha);
+}
+
+/* ===== Приветственное окно ===== */
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--espresso);
+  color: var(--milk);
+  cursor: pointer;
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.welcome.gone { transform: translateY(-100%); }
+
+.welcome p {
+  margin: 0;
+  padding: 0 1.5rem;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 9vw, 6rem);
+  line-height: 1.1;
+  opacity: 0;
+  animation: rise 1s 0.2s ease forwards;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ===== Главная ===== */
+.hero {
+  padding: clamp(4rem, 12vw, 9rem) 0 clamp(3rem, 8vw, 6rem);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  max-width: 20ch;
+  letter-spacing: -0.01em;
+}
+
+.hero .lead {
+  max-width: 56ch;
+  margin: 1.75rem 0 0;
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.25rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  border: 2px solid var(--espresso);
+  background: var(--espresso);
+  color: var(--milk);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover { background: var(--mocha); border-color: var(--mocha); }
+
+.btn.ghost { background: transparent; color: var(--espresso); }
+.btn.ghost:hover { background: var(--espresso); color: var(--milk); border-color: var(--espresso); }
+
+/* ===== Секции ===== */
+section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+
+section.alt { background: var(--foam); }
+
+.section-head { max-width: 60ch; margin-bottom: 2.5rem; }
+
+.section-head h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+
+.section-head p { margin: 0.9rem 0 0; color: var(--muted); }
+
+/* Список услуг */
+.rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--latte); }
+
+.rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 1rem 2.5rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--latte);
+}
+
+.rows h3 { font-size: 1.7rem; }
+
+.rows p { margin: 0; color: var(--muted); }
+
+/* Работы */
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 2rem 3rem;
+  align-items: center;
+}
+
+.work-preview {
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  background: var(--espresso);
+  color: var(--milk);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.work h3 { font-size: 2rem; }
+
+.work p { color: var(--muted); margin: 0.8rem 0 1.4rem; }
+
+/* Этапы — это настоящая последовательность, поэтому с номерами */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--latte);
+}
+
+.steps li::before {
+  content: counter(step);
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--mocha);
+  line-height: 1;
+}
+
+.steps strong { display: block; font-size: 1.1rem; }
+
+.steps span { color: var(--muted); }
+
+/* Контакты */
+.contacts {
+  background: var(--espresso);
+  color: var(--milk);
+}
+
+.contacts .section-head p { color: var(--latte); }
+
+.contact-list { display: grid; gap: 1rem; max-width: 560px; }
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(216, 195, 168, 0.35);
+}
+
+.contact-item .label { color: var(--latte); }
+
+.contact-item a {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--mocha);
+}
+
+.contact-item a:hover { color: var(--latte); }
+
+.contacts :focus-visible { outline-color: var(--latte); }
+
+.msg-links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem; }
+
+.contacts .btn { background: var(--milk); color: var(--espresso); border-color: var(--milk); }
+.contacts .btn:hover { background: var(--latte); border-color: var(--latte); }
+
+footer {
+  padding: 1.6rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--milk);
+}
+
+/* ===== Страница цен ===== */
+.page-title { padding: clamp(3rem, 8vw, 5.5rem) 0 1rem; }
+
+.page-title h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); }
+
+.page-title p { max-width: 58ch; margin: 1.2rem 0 0; color: var(--muted); }
+
+.packages { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--latte); }
+
+.package {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr) auto;
+  gap: 0.8rem 2rem;
+  align-items: baseline;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--latte);
+}
+
+.package h3 { font-size: 1.8rem; }
+
+.package .for { display: block; margin-top: 0.3rem; font-family: var(--sans); font-size: 0.95rem; color: var(--muted); font-weight: 400; }
+
+.package ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+
+.package .price {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.package.main { background: var(--foam); padding-inline: 1.5rem; margin-inline: -1.5rem; border-radius: 14px; border-bottom-color: transparent; }
+
+.table-scroll { overflow-x: auto; }
+
+table { width: 100%; border-collapse: collapse; min-width: 420px; }
+
+th, td { text-align: left; padding: 0.9rem 0; border-bottom: 1px solid var(--latte); }
+
+th { font-family: var(--serif); font-size: 1.2rem; }
+
+td:last-child, th:last-child { text-align: right; white-space: nowrap; font-weight: 600; }
+
+.notes { max-width: 62ch; color: var(--muted); }
+
+.notes li { margin-bottom: 0.6rem; }
+
+/* ===== Телефоны ===== */
+@media (max-width: 760px) {
+  .rows li,
+  .work,
+  .package { grid-template-columns: 1fr; }
+
+  .package .price { font-size: 2rem; }
+
+  .nav ul { gap: 1rem; font-size: 0.95rem; }
+
+  .package.main { margin-inline: -1rem; padding-inline: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .welcome { transition: none; }
+  .welcome p { animation: none; opacity: 1; }
+}
